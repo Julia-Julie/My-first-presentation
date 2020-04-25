@@ -1,0 +1,134 @@
+:root{
+    --page-1-bg: rgb(238, 209, 214);
+    --page-2-bg: rgb(167, 202, 202);
+    --page-3-bg: lightgray;
+    --page-4-bg: rgb(167, 196, 171);
+    --page-5-bg: #c0bdbd;
+    --animation-speed: 2s;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2rem;
+
+
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url('./fixed.jpg') no-repeat fixed right top;
+    
+    z-index: 1;
+
+}
+.page h1{
+ font-size: 4rem;
+ text-shadow: 2px 3px 2px black ;
+
+}
+#page-5 h1 {
+    font-size: 4rem;
+    color: white ;
+    line-height: 1.3rem;
+    text-shadow: 3px 3px 2px blue;
+
+} 
+
+.page p{
+    margin: 0.2rem 2rem;
+    padding-bottom: 1.5rem;
+    line-height: 1.8rem;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px #333333;
+}
+
+#page-1{
+    background-color: var(--page-1-bg);
+}
+#page-2{
+    background-color: var(--page-2-bg);
+}
+#page-3{
+    background-color: var(--page-3-bg);
+}
+#page-4{
+    background-color: var(--page-4-bg);
+}
+#page-5{
+    background-color: var(--page-5-bg);
+}
+
+/* links-buttons */
+.btn{
+    margin: 0 1rem;
+}
+a.next-pg,
+a.prev-pg:hover{
+    text-decoration: none;
+    background-color: #333333;
+    color: beige;
+    padding: 0.7rem 2rem;
+    border: none;
+    transition: all 0.8s ease-in-out;
+}
+
+a.next-pg:hover,
+a.prev-pg{
+    text-decoration: none;
+    background-color: beige;
+    color: #333333;
+    padding: 0.7rem 2rem;
+    border: none;
+    transition: all 1s ease-in-out;
+}
+
+/* Page Animation */
+#page-1 h1{
+transform: translateY(-1300px);
+animation: heading var(--animation-speed) ease-in-out forwards;
+}
+#page-1 p{
+    transform: translateX(-1500px);
+    animation: text var(--animation-speed) forwards ease-in 1s;
+    
+}
+#page-1 a.btn{
+    transform: translateY(1300px);
+    animation: button var(--animation-speed) forwards ease-in 1.5s;
+}
+
+/* Keyframes */
+@keyframes heading{
+    from{
+        transform: translateY(-1300px);
+    }
+    to{
+        transform:translate(0)
+    }
+}
+@keyframes text{
+    from{
+        transform: translateX(-1500px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes button{
+    form{
+        transform:translateY(1300px)
+    }
+    to{
+        transform: translateY(0);
+    }
+}
